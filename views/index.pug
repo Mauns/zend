@@ -1,5 +1,22 @@
 extends layout
 
+block styles
+  link(rel='stylesheet', href='/css/style.css')
+
 block content
-  h1 Hi
-  p Welcome to nothing
+  //- div#random
+  //- div.row
+  //-   div.small-6.column
+  //-     div#rpm
+  //-     div#rpm2
+  //-     div#rpmDot
+  //-   div.small-6.column
+  //-     div#kmh
+  div.kmhWrap
+    div
+      #kmh
+      div.label Km/h
+  div.rpmWrap
+    div#rpm
+    img.rpmOverlay(src="img/rpm.svg")
+      

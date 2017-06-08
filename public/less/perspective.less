@@ -1,0 +1,73 @@
+@import "mixins";
+@import "foundation";
+
+@dataRefresh: 50ms;
+
+@dark:#16131F;
+@white:#FFFFFF;
+@accent1:#FF425F;
+@signal:rgb(244, 193, 79);
+
+body{
+  // padding: 50px;
+  // font-family: 'Sofia Pro'
+  height:100vh;
+  width:100vw;
+  background:@dark;
+  color: @white;
+  perspective:100vw;
+}
+
+.f-number{
+  font-family:'Archive';
+  line-height:1;
+}
+.f-text{
+  font-family: 'Catamaran';
+  line-height:1;
+}
+
+.label{
+  .f-text;
+  color: fade(@white, 50%);
+  font-weight: 'light';
+  font-size:1.5rem;
+  display: inline-block;
+}
+
+.kmhWrap{
+  position: absolute;
+  border-radius:999px;
+  .transform(rotateY(60deg) rotateX(0deg) scale(1.25));
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  top:40vh;
+  margin:0 5rem;
+  height:300px;
+  width:300px;
+  .gradient(@dark, lighten(@dark, 10%), 45deg);
+  border:2px solid @accent1;
+  #kmh{
+    .f-number;
+    color:@white;
+    font-size:6rem;
+    text-align:left;
+    display:inline-block;
+    min-width: 174px;
+  }
+  .label{
+    text-align:left;
+  }
+}
+  .speedSignal{
+    .animation(speedSignal 1s ease forwards);
+  }
+.keyframes(speedSignal;{
+  0%{
+    color: @accent1;
+  }
+  100%{
+    color: @white;
+  }
+});
